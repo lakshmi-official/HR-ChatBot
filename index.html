@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCL HR Policy Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div id="login-container" class="login-container">
+        <div class="logo-container">
+            <h1>HCL Technologies</h1>
+        </div>
+        <h2>HR Policy Assistant</h2>
+        <div class="login-form">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" placeholder="Enter Username ">
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Enter Password ">
+                <i id="toggle-password" class="fas fa-eye-slash toggle-password" onclick="togglePassword()"></i>
+            </div>
+
+            <p id="error-message" class="error-text"></p>
+            <button type="button" onclick="login()" class="login-btn">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+        </div>
+    </div>
+
+    <div id="chat-container" class="chat-container" style="display: none;">
+        <div class="chat-header">
+            <h2>HCL HR Policy Assistant</h2>
+            <button onclick="logout()" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+        
+        <div id="chat-box" class="chat-box">
+            <div class="bot-message-container">
+                <div class="bot-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <p class="bot-message">Welcome to HCL's HR Policy Assistant! I'm here to help you find information about HCL's HR policies. What would you like to know?</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="input-section">
+            <input type="text" id="user-input" placeholder="Ask about leave policy, benefits, code of conduct, etc.">
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
